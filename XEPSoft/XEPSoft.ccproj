@@ -36,6 +36,22 @@
     <ServiceConfiguration Include="ServiceConfiguration.Local.cscfg" />
     <ServiceConfiguration Include="ServiceConfiguration.Cloud.cscfg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebRole\WebRole.csproj">
+      <Name>WebRole</Name>
+      <Project>{eaa444e7-9783-46fa-b815-667f32fdf2d1}</Project>
+      <Private>True</Private>
+      <RoleType>Web</RoleType>
+      <RoleName>WebRole</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="WebRoleContent\" />
+  </ItemGroup>
+  <ItemGroup>
+    <DiagnosticsConfiguration Include="WebRoleContent\diagnostics.wadcfgx" />
+  </ItemGroup>
   <!-- Import the target files for this project template -->
   <PropertyGroup>
     <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
